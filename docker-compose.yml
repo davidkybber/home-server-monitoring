@@ -4,3 +4,11 @@ services:
     image: grafana/grafana:7.5.7
     ports:
       - 3000:3000
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    volumes:
+      - ./mosquitto:/mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
